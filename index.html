@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WATCH | The Peak of Luxury</title>
     <style>
-        /* --- CSS STYLING (Requirements 4, 10, 12) --- */
+        /* --- Requirement 4, 10, 12: Design & Aesthetics --- */
         :root {
             --gold: #d4af37;
             --dark-bg: #0a0a0a;
-            --card-bg: #1a1a1a;
+            --card-bg: #111111;
             --text-light: #f4f4f4;
             --text-dim: #a0a0a0;
         }
 
         body {
-            font-family: 'Georgia', serif; /* Professional Serif font */
+            font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
-            background: var(--dark-bg); /* Requirement 4: Background styling */
+            background: var(--dark-bg); /* Req 4: Background */
             color: var(--text-light);
-            line-height: 1.8;
+            line-height: 1.6;
         }
 
-        /* Requirement 6: Navigation Menu */
+        /* Requirement 6: Navigation Menu (5 items) */
         .navbar {
-            background-color: rgba(0, 0, 0, 0.95);
-            padding: 1.5rem 10%;
+            background-color: #000;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -37,8 +37,8 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            letter-spacing: 5px;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
             color: var(--gold);
             font-weight: bold;
         }
@@ -46,113 +46,129 @@
         .nav-links {
             list-style: none;
             display: flex;
+            gap: 20px;
             margin: 0;
         }
-
-        .nav-links li { margin-left: 30px; }
 
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
             transition: 0.3s;
         }
 
-        .nav-links a:hover { color: var(--gold); } /* Requirement 9: Extras */
+        .nav-links a:hover { color: var(--gold); } /* Req 9: Extras */
 
         /* Requirement 12: Container Styling */
         .hero {
-            height: 60vh;
+            height: 350px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1509048191080-d2984bad6ad5?q=80&w=1500');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1500');
             background-size: cover;
             background-position: center;
+            border-bottom: 2px solid var(--gold);
         }
 
-        .hero h1 { font-size: 3.5rem; margin: 0; color: var(--gold); }
+        .hero h1 { font-size: 3rem; margin: 0; color: var(--gold); letter-spacing: 3px; }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
-        /* Requirement 1: Layout Columns */
+        /* Requirement 1: Layout Columns (2 Columns) */
         .row {
             display: flex;
-            gap: 50px;
+            gap: 40px;
             flex-wrap: wrap;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .col { flex: 1; min-width: 300px; }
 
-        /* Requirement 2: Image/Video Containers */
+        /* Requirement 2: Image & Video Container Styling */
         .media-container {
             background: var(--card-bg);
-            border: 1px solid #333;
+            border: 1px solid #222;
             padding: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: center;
-            transition: border 0.3s;
+            transition: 0.3s ease;
         }
 
         .media-container:hover { border-color: var(--gold); }
 
+        /* Fixed Image Width & Height */
         .media-container img {
             width: 100%;
-            height: 250px;
-            object-fit: cover;
-            filter: grayscale(30%);
+            height: 280px; /* Fixed height for uniformity */
+            object-fit: cover; /* Prevents stretching */
+            border-bottom: 1px solid #333;
+            margin-bottom: 10px;
         }
 
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        /* Fixed Video Width & Height (16:9 Aspect Ratio) */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* Requirement 3: Full Length Tables */
         .full-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 30px 0;
-            color: var(--text-dim);
+            margin: 20px 0;
+            background: #050505;
         }
 
         .full-table th {
             background-color: var(--gold);
-            color: black;
-            padding: 15px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
+            color: #000;
+            padding: 12px;
+            text-align: left;
         }
 
         .full-table td {
-            padding: 15px;
-            border-bottom: 1px solid #333;
+            padding: 12px;
+            border-bottom: 1px solid #222;
+            color: var(--text-dim);
         }
 
         /* Requirement 5: Nested Lists */
-        .main-list { color: var(--gold); padding-left: 20px; }
-        .main-list ul { color: var(--text-dim); list-style-type: circle; }
+        .main-list { color: var(--gold); margin-top: 15px; }
+        .main-list ul { color: var(--text-dim); margin-bottom: 10px; }
 
         /* Requirement 11: Footer */
         footer {
             background: #000;
-            padding: 40px 10%;
+            padding: 40px 5%;
             text-align: center;
-            border-top: 1px solid #222;
+            border-top: 1px solid var(--gold);
         }
 
-        footer p { color: var(--text-dim); font-size: 0.9rem; }
+        footer p { margin: 5px 0; font-size: 0.85rem; color: var(--text-dim); }
+
+        h2 { border-left: 4px solid var(--gold); padding-left: 15px; color: var(--gold); }
     </style>
 </head>
 <body>
@@ -160,11 +176,11 @@
     <nav class="navbar">
         <div class="logo">WATCH</div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Collections</a></li>
-            <li><a href="#">Showcase</a></li>
-            <li><a href="#">Boutiques</a></li>
-            <li><a href="#">Inquiry</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="collection.html">Collections</a></li>
+            <li><a href="video.html">Showcase</a></li>
+            <li><a href="specs.html">Specifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -177,29 +193,29 @@
         
         <div class="row">
             <section class="col">
-                <h2 style="color:var(--gold)">Heritage & Precision</h2>
-                <p>In the world of haute horlogerie, time is not merely measured; it is celebrated. Our artisans dedicate thousands of hours to the assembly of a single movement, ensuring that every escapement and balance wheel operates in perfect harmony.</p>
-                <p>True luxury lies in the details that the eye cannot see—the hand-polished chamfers, the perlage on the baseplates, and the soul of a mechanical heartbeat.</p>
+                <h2>Heritage & Precision</h2>
+                <p>In the world of haute horlogerie, time is not merely measured; it is celebrated. Our artisans dedicate thousands of hours to the assembly of a single movement, ensuring that every gear operates in perfect harmony with the laws of physics.</p>
+                <p>True luxury lies in the details that the eye cannot see—the hand-polished chamfers, the perlage on the baseplates, and the mechanical heartbeat of a handcrafted masterpiece from Geneva.</p>
                 
-                <h3>Exclusive Collections</h3>
+                <h3>Exclusive Categories</h3>
                 <ul class="main-list">
                     <li>The Celestial Series
                         <ul>
-                            <li>Moon Phase Indicators</li>
-                            <li>Star Charts</li>
+                            <li>Moon Phase Tracking</li>
+                            <li>Annual Calendars</li>
                         </ul>
                     </li>
-                    <li>The Racing Chrono
+                    <li>The Racing Line
                         <ul>
-                            <li>Titanium Chassis</li>
-                            <li>Carbon Fiber Dials</li>
+                            <li>Carbon Fiber Cases</li>
                         </ul>
                     </li>
-                    <li>Gold Heritage</li>
+                    <li>Heritage Gold Edition</li>
                 </ul>
             </section>
 
             <section class="col">
+                <h3>Global Price Index</h3>
                 <table class="full-table">
                     <tr>
                         <th>Model</th>
@@ -217,88 +233,102 @@
                         <td>$24,000</td>
                     </tr>
                 </table>
-                <p>Each timepiece in our catalog is a protected asset, designed to appreciate in value over generations. We use only the finest ethically sourced diamonds and rare earth metals.</p>
-                <p>Our commitment to excellence extends beyond the watch itself to our global network of private boutiques and concierge services.</p>
-                <p>Welcome to a legacy of distinction. Welcome to the world of WATCH.</p>
+                <p>Each timepiece is a protected asset, designed to appreciate in value over generations using ethically sourced rare metals.</p>
+                <p>Our commitment to excellence extends to our global network of private boutiques located in the world's most prestigious cities.</p>
+                <p>Welcome to a legacy of distinction. Welcome to the world of luxury horology.</p>
             </section>
         </div>
 
-        <h2 style="text-align:center; color:var(--gold)">The Gallery</h2>
+        <h2 style="text-align:center; border-left:none;">The Most Expensive Watches (5 Images)</h2>
+        
         <div class="row">
-            <div class="col"><div class="media-container"><img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=400" alt="Watch 1"><p>Grand Gold</p></div></div>
-            <div class="col"><div class="media-container"><img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=400" alt="Watch 2"><p>Skeleton Dial</p></div></div>
-            <div class="col"><div class="media-container"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400" alt="Watch 3"><p>Patek Classic</p></div></div>
-        </div>
-        <div class="row" style="justify-content:center;">
-           <div class="row">
-    <div class="col">
-        <div class="media-container">
-            <img src="https://images.unsplash.com/photo-1599643478524-fb66f70d00f0?q=80&w=600" alt="Graff Diamonds Hallucination">
-            <h3 style="color: var(--gold);">1. Graff Diamonds Hallucination</h3>
-            <p><strong>Estimated Value: $55,000,000</strong></p>
-            <p>The undisputed most expensive watch ever created. It features an astounding 110 carats of extremely rare, multi-colored diamonds meticulously set into a seamless platinum bracelet.</p>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="media-container">
-            <img src="https://images.unsplash.com/photo-1565588661661-8631b0fc25ce?q=80&w=600" alt="Graff Diamonds The Fascination">
-            <h3 style="color: var(--gold);">2. Graff Diamonds The Fascination</h3>
-            <p><strong>Estimated Value: $40,000,000</strong></p>
-            <p>A transformable masterpiece containing 152.96 carats of white diamonds. The center features a flawless 38.14-carat pear-shaped diamond that can detach to be worn as a ring.</p>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <div class="media-container">
-            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=600" alt="Patek Philippe Grandmaster Chime">
-            <h3 style="color: var(--gold);">3. Patek Philippe Grandmaster Chime</h3>
-            <p><strong>Auction Price: $31,190,000</strong></p>
-            <p>The most complicated Patek Philippe wristwatch ever made, boasting 20 complications, a reversible case, and two independent dials. It holds the world record for the highest price paid at auction.</p>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="media-container">
-            <img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ad5?q=80&w=600" alt="Breguet Marie-Antoinette">
-            <h3 style="color: var(--gold);">4. Breguet No. 160 Marie-Antoinette</h3>
-            <p><strong>Estimated Value: $30,000,000</strong></p>
-            <p>Commissioned by an admirer of the French Queen, this legendary pocket watch took 44 years to build (finished after her death) and includes every watchmaking complication known at the time.</p>
-        </div>
-    </div>
-</div>
-
-        <h2 style="text-align:center; color:var(--gold)">Showcase Films</h2>
-        <div class="video-grid">
-            <div class="media-container">
-                <iframe width="100%" height="200" src="https://www.youtube.com/embed/85nRfMSeRos" frameborder="0"></iframe>
-                <p>Jacob & Co. Billionaire</p>
+            <div class="col">
+                <div class="media-container">
+                    <img src="https://images.unsplash.com/photo-1585123334904-845d60e97b29?q=80&w=600" alt="Graff Hallucination">
+                    <p>1. Graff Hallucination ($55M)</p>
+                </div>
             </div>
-            <div class="media-container">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/a9R_k7wI3IY?si=vBaVsqQlAHSTgXnE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <p>Patek Philippe Chime</p>
+            <div class="col">
+                <div class="media-container">
+                    <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=600" alt="Graff Fascination">
+                    <p>2. Graff Fascination ($40M)</p>
+                </div>
             </div>
-            <div class="media-container">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/9zHTLNJt8x4?si=NM36rljCZP5HTqfb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <p>Masterpiece 57260</p>
+            <div class="col">
+                <div class="media-container">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600" alt="Patek Chime">
+                    <p>3. Grandmaster Chime ($31M)</p>
+                </div>
             </div>
-            <div class="media-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/U6yK0SlXQNM?si=6K3eCGRVkUquzoDI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <p>Richard Mille Racing</p>
+        </div>
+        <div class="row" style="justify-content: center;">
+            <div class="col" style="max-width: 400px;">
+                <div class="media-container">
+                    <img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ad5?q=80&w=600" alt="Breguet">
+                    <p>4. Marie-Antoinette ($30M)</p>
+                </div>
             </div>
-            <div class="media-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/a4XtpzLTouQ?si=UGq9EPwQCkPwbHhQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <p>Rolex Craft</p>
+            <div class="col" style="max-width: 400px;">
+                <div class="media-container">
+                    <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=600" alt="Rolex Paul Newman">
+                    <p>5. Paul Newman Rolex ($17.7M)</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align:center; border-left:none;">Luxury Showcase Films (5 Videos)</h2>
+        
+        <div class="row">
+            <div class="col">
+                <div class="media-container">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/85nRfMSeRos"></iframe>
+                    </div>
+                    <p>Jacob & Co. Billionaire</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="media-container">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/a9R_k7wI3IY"></iframe>
+                    </div>
+                    <p>Patek Philippe Chime</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="media-container">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/9zHTLNJt8x4"></iframe>
+                    </div>
+                    <p>Vacheron 57260</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="media-container">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/U6yK0SlXQNM"></iframe>
+                    </div>
+                    <p>Richard Mille Racing</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="media-container">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/a4XtpzLTouQ"></iframe>
+                    </div>
+                    <p>Rolex Assembly</p>
+                </div>
             </div>
         </div>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 WATCH Luxury Collective.Disigned by moise wathum 25-0791.</p>
-        <p>Geneva | London | New York | Dubai|Nairobi|DRC congo</p>
+        <p>&copy; 2026 WATCH Luxury Collective. Designed by Moise Wathum 25-0791.</p>
+        <p>Geneva | London | New York | Dubai | Nairobi | DRC Congo</p>
     </footer>
 
 </body>
