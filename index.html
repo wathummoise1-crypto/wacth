@@ -3,138 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WATCH | The Peak of Luxury</title>
-    <link rel="stylesheet" href="style.css">
+    <title>WATCH</title>
+    <style>
+        /* --- CSS STYLING (Requirements 4, 10, 12) --- */
+        :root {
+            --gold: #d4af37;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-light: #f4f4f4;
+            --text-dim: #a0a0a0;
+        }
+
+        body {
+            font-family: 'Georgia', serif; /* Professional Serif font */
+            margin: 0;
+            padding: 0;
+            background: var(--dark-bg); /* Requirement 4: Background styling */
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Requirement 6: Navigation Menu */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            letter-spacing: 5px;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        .nav-links li { margin-left: 30px; }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--gold); } /* Requirement 9: Extras */
+
+        /* Requirement 12: Container Styling */
+        .hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1509048191080-d2984bad6ad5?q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin: 0; color: var(--gold); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Requirement 1: Layout Columns */
+        .row {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .col { flex: 1; min-width: 300px; }
+
+        /* Requirement 2: Image/Video Containers */
+        .media-container {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+            transition: border 0.3s;
+        }
+
+        .media-container:hover { border-color: var(--gold); }
+
+        .media-container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            filter: grayscale(30%);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Requirement 3: Full Length Tables */
+        .full-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            color: var(--text-dim);
+        }
+
+        .full-table th {
+            background-color: var(--gold);
+            color: black;
+            padding: 15px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .full-table td {
+            padding: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        /* Requirement 5: Nested Lists */
+        .main-list { color: var(--gold); padding-left: 20px; }
+        .main-list ul { color: var(--text-dim); list-style-type: circle; }
+
+        /* Requirement 11: Footer */
+        footer {
+            background: #000;
+            padding: 40px 10%;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        footer p { color: var(--text-dim); font-size: 0.9rem; }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">WATCH</div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="collection.html">Collections</a></li>
-            <li><a href="video.html">Showcase</a></li>
-            <li><a href="details.html">Specs</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Showcase</a></li>
+            <li><a href="#">Boutiques</a></li>
+            <li><a href="#">Inquiry</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>Timeless Elegance</h1>
-        <p>Explore the world's most expensive and rare timepieces.</p>
+        <h1>THE ART OF TIME</h1>
+        <p>Exclusivity in Every Second.</p>
     </header>
 
     <main class="container">
         
         <div class="row">
-            
             <section class="col">
-                <h2>Our Heritage & Craft</h2>
-                <p>Founded in the heart of Switzerland, our brand has stood for precision for over a century. We believe that a watch is more than just a tool; it is a statement of identity and a legacy to be passed down.</p>
-                <p>Every gear and spring is hand-assembled by master watchmakers who have dedicated their lives to the craft of timekeeping. The process for a single timepiece can take over a year of meticulous labor.</p>
+                <h2 style="color:var(--gold)">Heritage & Precision</h2>
+                <p>In the world of haute horlogerie, time is not merely measured; it is celebrated. Our artisans dedicate thousands of hours to the assembly of a single movement, ensuring that every escapement and balance wheel operates in perfect harmony.</p>
+                <p>True luxury lies in the details that the eye cannot see—the hand-polished chamfers, the perlage on the baseplates, and the soul of a mechanical heartbeat.</p>
                 
-                <h3>The Watch Hierarchy</h3>
+                <h3>Exclusive Collections</h3>
                 <ul class="main-list">
-                    <li>Grand Complications
+                    <li>The Celestial Series
                         <ul>
-                            <li>Tourbillons</li>
-                            <li>Minute Repeaters</li>
+                            <li>Moon Phase Indicators</li>
+                            <li>Star Charts</li>
                         </ul>
                     </li>
-                    <li>Professional Series
+                    <li>The Racing Chrono
                         <ul>
-                            <li>Deep Sea Divers</li>
-                            <li>Aviation Chronographs</li>
+                            <li>Titanium Chassis</li>
+                            <li>Carbon Fiber Dials</li>
                         </ul>
                     </li>
-                    <li>Heritage Collection</li>
+                    <li>Gold Heritage</li>
                 </ul>
-
-                <h3>Luxury Specifications</h3>
-                <table class="full-table">
-                    <tr>
-                        <th>Model Name</th>
-                        <th>Primary Material</th>
-                        <th>Retail Price (Est)</th>
-                    </tr>
-                    <tr>
-                        <td>Patek Philippe Chime</td>
-                        <td>White Gold</td>
-                        <td>$31,000,000</td>
-                    </tr>
-                    <tr>
-                        <td>Jacob & Co Billionaire</td>
-                        <td>Ashoka Diamonds</td>
-                        <td>$18,000,000</td>
-                    </tr>
-                </table>
             </section>
 
             <section class="col">
-                <h2>The Elite Gallery</h2>
-                <p>Our latest collection features sapphire crystal glass and water resistance up to 200 meters, ensuring durability without ever sacrificing style or elegance.</p>
-                
-                <div class="image-grid">
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=400" alt="Rolex Gold">
-                        <p>Rolex Day-Date Gold</p>
-                    </div>
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=400" alt="Skeleton Watch">
-                        <p>Mechanical Skeleton</p>
-                    </div>
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400" alt="Leather Watch">
-                        <p>Patek Philippe Leather</p>
-                    </div>
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1619134769035-442436d63ef2?q=80&w=400" alt="Audemars Piguet">
-                        <p>Royal Oak Sport</p>
-                    </div>
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ad5?q=80&w=400" alt="Vintage Pocket Watch">
-                        <p>Vintage Vacheron</p>
-                    </div>
-                </div>
-
-                <p>Innovation is at our core. We utilize 3D printing for prototyping our unique case designs before they go into final production stages.</p>
-                <p>Join our membership club to get exclusive access to auction events and early releases of our yearly anniversary pieces produced in Switzerland.</p>
+                <table class="full-table">
+                    <tr>
+                        <th>Model</th>
+                        <th>Material</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>Patek Chime</td>
+                        <td>White Gold</td>
+                        <td>$31.1M</td>
+                    </tr>
+                    <tr>
+                        <td>Rolex GMT</td>
+                        <td>Oystersteel</td>
+                        <td>$24,000</td>
+                    </tr>
+                </table>
+                <p>Each timepiece in our catalog is a protected asset, designed to appreciate in value over generations. We use only the finest ethically sourced diamonds and rare earth metals.</p>
+                <p>Our commitment to excellence extends beyond the watch itself to our global network of private boutiques and concierge services.</p>
+                <p>Welcome to a legacy of distinction. Welcome to the world of WATCH.</p>
             </section>
         </div>
 
-        <hr>
+        <h2 style="text-align:center; color:var(--gold)">The Gallery</h2>
+        <div class="row">
+            <div class="col"><div class="media-container"><img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=400" alt="Watch 1"><p>Grand Gold</p></div></div>
+            <div class="col"><div class="media-container"><img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=400" alt="Watch 2"><p>Skeleton Dial</p></div></div>
+            <div class="col"><div class="media-container"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400" alt="Watch 3"><p>Patek Classic</p></div></div>
+        </div>
+        <div class="row" style="justify-content:center;">
+            <div style="width:30%"><div class="media-container"><img src="https://images.unsplash.com/photo-1619134769035-442436d63ef2?q=80&w=400" alt="Watch 4"><p>Sport Elite</p></div></div>
+            <div style="width:30%"><div class="media-container"><img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ad5?q=80&w=400" alt="Watch 5"><p>Vacheron Pocket</p></div></div>
+        </div>
 
-        <section class="video-section">
-            <h2 style="text-align:center;">Watch Masterpieces in Motion</h2>
-            <div class="video-grid">
-                <div class="media-container">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/85nRfMSeRos" frameborder="0"></iframe>
-                    <p>Jacob & Co. Billionaire</p>
-                </div>
-                <div class="media-container">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/H8atv5mEsh8" frameborder="0"></iframe>
-                    <p>Patek Philippe Chime</p>
-                </div>
-                <div class="media-container">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/87p9O6Z2TzE" frameborder="0"></iframe>
-                    <p>The 57260 Masterpiece</p>
-                </div>
-                <div class="media-container">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/yP7-H_0_Fas" frameborder="0"></iframe>
-                    <p>Richard Mille Racing</p>
-                </div>
-                <div class="media-container">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/l8shmI95_I8" frameborder="0"></iframe>
-                    <p>Rolex Craftsmanship</p>
-                </div>
+        <h2 style="text-align:center; color:var(--gold)">Showcase Films</h2>
+        <div class="video-grid">
+            <div class="media-container">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/85nRfMSeRos" frameborder="0"></iframe>
+                <p>Jacob & Co. Billionaire</p>
             </div>
-        </section>
+            <div class="media-container">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/H8atv5mEsh8" frameborder="0"></iframe>
+                <p>Patek Philippe Chime</p>
+            </div>
+            <div class="media-container">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/87p9O6Z2TzE" frameborder="0"></iframe>
+                <p>Masterpiece 57260</p>
+            </div>
+            <div class="media-container">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/yP7-H_0_Fas" frameborder="0"></iframe>
+                <p>Richard Mille Racing</p>
+            </div>
+            <div class="media-container">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/l8shmI95_I8" frameborder="0"></iframe>
+                <p>Rolex Craft</p>
+            </div>
+        </div>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 WATCH Luxury Collective | Designed for Excellence</p>
-        <p>Contact us: info@watchluxury.com</p>
+        <p>&copy; 2026 WATCH Luxury Collective.Disigned by moise 25-0791.</p>
+        <p>Geneva | London | New York | Dubai</p>
     </footer>
 
 </body>
