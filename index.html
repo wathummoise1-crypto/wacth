@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WATCH | The Peak of Luxury</title>
     <style>
-        /* --- COMBINED CSS STYLING --- */
+        /* --- GLOBAL DESIGN (Req 4, 10, 12) --- */
         :root {
             --gold: #d4af37;
             --dark-bg: #0a0a0a;
@@ -17,12 +17,13 @@
         body {
             font-family: 'Georgia', serif;
             margin: 0;
-            background: var(--dark-bg); /* Req 4: Background */
+            background: var(--dark-bg);
             color: var(--text-light);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* Req 6: Navigation Menu (5 items) */
+        /* --- NAVIGATION (Req 6) --- */
         .navbar {
             background-color: #000;
             padding: 1rem 5%;
@@ -46,11 +47,11 @@
         }
         .nav-links a:hover { color: var(--gold); }
 
-        /* Req 12: Container Styling */
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-
+        /* --- LAYOUT (Req 1, 12) --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        
         .hero {
-            height: 350px;
+            height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -63,21 +64,20 @@
             border-bottom: 2px solid var(--gold);
         }
 
-        /* Req 1: Layout Columns */
         .row { display: flex; gap: 40px; flex-wrap: wrap; margin-bottom: 50px; }
         .col { flex: 1; min-width: 300px; }
 
-        /* Req 3: Tables */
+        /* --- TABLES (Req 3) --- */
         .full-table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
             background: #050505;
         }
-        .full-table th { background-color: var(--gold); color: #000; padding: 12px; text-align: left; }
-        .full-table td { padding: 12px; border-bottom: 1px solid #222; color: var(--text-dim); }
+        .full-table th { background-color: var(--gold); color: #000; padding: 15px; text-align: left; }
+        .full-table td { padding: 15px; border-bottom: 1px solid #222; color: var(--text-dim); }
 
-        /* Req 2: Media Containers */
+        /* --- MEDIA (Req 2) --- */
         .media-container {
             background: var(--card-bg);
             border: 1px solid #222;
@@ -85,22 +85,28 @@
             margin-bottom: 20px;
             text-align: center;
         }
-        .media-container img { width: 100%; height: 280px; object-fit: cover; }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .media-container img { width: 100%; height: 300px; object-fit: cover; border: 1px solid #333; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 10px; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* Req 11: Footer */
-        footer {
-            background: #000;
-            padding: 40px 5%;
-            text-align: center;
-            border-top: 1px solid var(--gold);
-        }
+        /* --- UI ELEMENTS --- */
+        h2 { border-left: 5px solid var(--gold); padding-left: 15px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; }
+        .main-list { color: var(--gold); font-weight: bold; }
+        .main-list ul { color: var(--text-dim); font-weight: normal; margin-top: 5px; }
 
-        /* Design Tweaks */
-        h2 { border-left: 4px solid var(--gold); padding-left: 15px; color: var(--gold); }
-        .main-list { color: var(--gold); }
-        .main-list ul { color: var(--text-dim); }
+        input, textarea, button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background: #111;
+            border: 1px solid var(--gold);
+            color: white;
+            box-sizing: border-box;
+        }
+        button { background: var(--gold); color: black; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: white; }
+
+        footer { background: #000; padding: 50px 5%; text-align: center; border-top: 1px solid var(--gold); }
     </style>
 </head>
 <body>
@@ -108,15 +114,15 @@
     <nav class="navbar">
         <div class="logo">WATCH</div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="collection.html">Collections</a></li>
-            <li><a href="video.html">Showcase</a></li>
-            <li><a href="specs.html">Specifications</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#showcase">Showcase</a></li>
+            <li><a href="#specifications">Specifications</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
+    <header class="hero" id="home">
         <h1>THE ART OF TIME</h1>
         <p>Exclusivity in Every Second.</p>
     </header>
@@ -129,40 +135,103 @@
                 <p>True luxury lies in the details that the eye cannot see—the hand-polished chamfers, the perlage on the baseplates, and the mechanical heartbeat of a handcrafted masterpiece from Geneva.</p>
                 <p>Since our founding, the WATCH Luxury Collective has stood at the intersection of traditional craftsmanship and modern innovation. Every piece tells a story of perseverance and art.</p>
                 
-                <h3>Exclusive Categories</h3>
+                <h3>Exclusive Categories (Req 5)</h3>
                 <ul class="main-list">
                     <li>The Celestial Series
                         <ul>
-                            <li>Moon Phase Tracking</li>
-                            <li>Annual Calendars</li>
+                            <li>Moon Phase Tracking & Sky Charts</li>
+                            <li>Perpetual Calendar Complications</li>
                         </ul>
                     </li>
                     <li>The Racing Line
                         <ul>
-                            <li>Carbon Fiber Cases</li>
-                            <li>Titanium Movements</li>
+                            <li>Carbon Fiber & Grade 5 Titanium</li>
+                            <li>High-Frequency Chronographs</li>
                         </ul>
                     </li>
-                    <li>Heritage Gold Edition</li>
                 </ul>
             </section>
-
             <section class="col">
-                <h3>Global Price Index</h3>
-                <table class="full-table">
-                    <tr><th>Model</th><th>Material</th><th>Price</th></tr>
-                    <tr><td>Patek Chime</td><td>White Gold</td><td>$31.1M</td></tr>
-                    <tr><td>Rolex GMT</td><td>Oystersteel</td><td>$24,000</td></tr>
-                </table>
-                <p>Each timepiece is a protected asset, designed to appreciate in value over generations using ethically sourced rare metals.</p>
-                <p>Our commitment to excellence extends to our global network of private boutiques located in the world's most prestigious cities.</p>
+                <h2>The Legacy</h2>
+                <p>Each timepiece is a protected asset, designed to appreciate in value over generations. We source only ethically mined precious metals and rare gemstones for our distinguished clients worldwide.</p>
+                <p>Our commitment to excellence extends to our global network of private boutiques located in the world's most prestigious cities. We invite you to experience time in its purest and most artistic form.</p>
             </section>
         </div>
+
+        <hr style="border: 0.5px solid #222; margin: 60px 0;">
+
+        <section id="collections">
+            <h2>Luxury Collections</h2>
+            <div class="row">
+                <div class="col"><div class="media-container"><img src="https://images.unsplash.com/photo-1585123334904-845d60e97b29?w=600" alt="Watch 1"><p>Celestial Heritage ($55M)</p></div></div>
+                <div class="col"><div class="media-container"><img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=600" alt="Watch 2"><p>Grandmaster Chime ($31M)</p></div></div>
+                <div class="col"><div class="media-container"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch 3"><p>The Queen's Vault ($30M)</p></div></div>
+            </div>
+            <div class="row">
+                <div class="col"><div class="media-container"><img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600" alt="Watch 4"><p>Daytona Legacy ($17.7M)</p></div></div>
+                <div class="col"><div class="media-container"><img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ad5?w=600" alt="Watch 5"><p>Calatrava Platinum ($11M)</p></div></div>
+            </div>
+        </section>
+
+        <hr style="border: 0.5px solid #222; margin: 60px 0;">
+
+        <section id="showcase">
+            <h2>Watchmaking Showcase</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/85nRfMSeRos"></iframe></div>
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/a9R_k7wI3IY"></iframe></div>
+                </div>
+                <div class="col">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/9zHTLNJt8x4"></iframe></div>
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/U6yK0SlXQNM"></iframe></div>
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/a4XtpzLTouQ"></iframe></div>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0.5px solid #222; margin: 60px 0;">
+
+        <section id="specifications">
+            <h2>Technical Specifications</h2>
+            <table class="full-table">
+                <tr><th>Movement Feature</th><th>Elite Grade</th><th>Master Grade</th></tr>
+                <tr><td>Vibration Frequency</td><td>28,800 vph</td><td>36,000 vph</td></tr>
+                <tr><td>Power Reserve</td><td>48 Hours</td><td>72 Hours</td></tr>
+            </table>
+
+            <table class="full-table">
+                <tr><th>Case Material</th><th>Hardness</th><th>Resistance</th></tr>
+                <tr><td>950 Platinum</td><td>High</td><td>Immune</td></tr>
+                <tr><td>Grade 5 Titanium</td><td>Ultra High</td><td>Extreme</td></tr>
+            </table>
+        </section>
+
+        <hr style="border: 0.5px solid #222; margin: 60px 0;">
+
+        <section id="contact">
+            <h2>Global Concierge</h2>
+            <div class="row">
+                <div class="col">
+                    <form onsubmit="event.preventDefault(); alert('Inquiry Sent Successfully!');">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <textarea placeholder="Message..." rows="4"></textarea>
+                        <button type="submit">REQUEST CONSULTATION</button>
+                    </form>
+                </div>
+                <div class="col" style="background:#111; padding:20px; border-left: 2px solid var(--gold);">
+                    <h3>Boutique Locations</h3>
+                    <p><strong>Geneva:</strong> Rue du Rhône 12</p>
+                    <p><strong>Dubai:</strong> The Dubai Mall</p>
+                    <p><strong>Nairobi:</strong> Westlands Square</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 WATCH Luxury Collective. Designed by Moise Wathum 25-0791.</p>
-        <p>Geneva | London | New York | Dubai | Nairobi | DRC Congo</p>
     </footer>
 
 </body>
